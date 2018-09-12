@@ -13,7 +13,7 @@ __author__ = 'Bruno'
 index_path = None
 parser = argparse.ArgumentParser()
 parser.add_argument('--data_dir', type=str,
-                    help='Directory for storing downloaded albums')
+                    help='Name a directory to store the downloaded albums')
 parser.add_argument('--search', type=str,
                     help='Input search string for resources in nhnetai')
 index_path, unparsed = parser.parse_known_args()
@@ -27,12 +27,12 @@ else:
 
 try:
     if index_path.data_dir:
-        os.mkdir('/mnt/d/Y/' + index_path.data_dir + '/') # 采集 gID_aID_pNum 的文件路径
+        os.mkdir('./' + index_path.data_dir + '/') # 采集 gID_aID_pNum 的文件路径
     elif index_path.search:
-        index_path.data_dir = '/mnt/d/Y/' + index_path.search + '/'
+        index_path.data_dir = './' + index_path.search + '/'
         os.mkdir(index_path.data_dir)
     else:
-        index_path.data_dir = '/mnt/d/Y/manga/'
+        index_path.data_dir = './manga/'
         os.mkdir(index_path.data_dir)
 except FileExistsError:
     pass

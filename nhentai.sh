@@ -3,13 +3,12 @@
 # if you encouter problem like: '$\r is not defined'
 # run `dos2unix cool.sh`` first
 
-
-# $1，可选项，一般为 --data_dir 后面接 $2 添加欲创建的目录名。
-# $3 也是可选项，一般为 --search 后面接 $4 为 希望搜索的关键词，多个关键词可以用 + 符号连接
+# $1，可选项，一般为 --data_dir. 后面接 $2 添加欲创建的目录名。
+# $3 也是可选项，一般为 --search. 后面接 $4 为 希望搜索的关键词，多个关键词需要用 + 符号连接
 # 注意，关键词和 + 之间不要有空格，关键词在一个或两个之间，不推荐太多个关键词
 # 示例：`bash setup.sh --data_dir nico_robin --search nico+robin`
 
-python3 nora-higuma.py $1 $2 $3 $4
+python3 nhentai.py $1 $2 $3 $4
 
 if [[ $1 == '--data_dir' ]]
 then
